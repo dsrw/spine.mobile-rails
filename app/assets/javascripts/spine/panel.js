@@ -40,14 +40,17 @@
       }
       return this.header.find('h2:first').html(title);
     };
-    Panel.prototype.addButton = function(text, callback) {
+    Panel.prototype.addButton = function(text, callback, elem) {
       var button;
+      if (elem == null) {
+        elem = this.header;
+      }
       if (typeof callback === 'string') {
         callback = this[callback];
       }
       button = $('<button />').text(text);
       button.tap(this.proxy(callback));
-      this.header.append(button);
+      elem.append(button);
       return button;
     };
     Panel.prototype.activate = function(params) {
@@ -84,10 +87,13 @@
         this.content.gfxSlideIn(this.effectOptions({
           direction: 'left'
         }));
-        return this.header.gfxSlideIn(this.effectOptions({
+        this.header.gfxSlideIn(this.effectOptions({
           direction: 'left',
           fade: true,
           distance: 50
+        }));
+        return this.footer.gfxSlideIn(this.effectOptions({
+          direction: 'left'
         }));
       },
       right: function() {
@@ -95,10 +101,13 @@
         this.content.gfxSlideIn(this.effectOptions({
           direction: 'right'
         }));
-        return this.header.gfxSlideIn(this.effectOptions({
+        this.header.gfxSlideIn(this.effectOptions({
           direction: 'right',
           fade: true,
           distance: 50
+        }));
+        return this.footer.gfxSlideIn(this.effectOptions({
+          direction: 'right'
         }));
       }
     };
@@ -112,6 +121,9 @@
           fade: true,
           distance: 50
         }));
+        this.footer.gfxSlideOut(this.effectOptions({
+          direction: 'right'
+        }));
         return this.content.queueNext(__bind(function() {
           return this.el.removeClass('active');
         }, this));
@@ -124,6 +136,9 @@
           direction: 'left',
           fade: true,
           distance: 50
+        }));
+        this.footer.gfxSlideOut(this.effectOptions({
+          direction: 'left'
         }));
         return this.content.queueNext(__bind(function() {
           return this.el.removeClass('active');
