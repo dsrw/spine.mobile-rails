@@ -52,3 +52,65 @@ body.stage > footer {
 .panel > header button:active {
   -webkit-box-shadow: inset 0 -1px 1px rgba(0,0,0,0.30), inset 0 1px 1px 0 rgba(0,0,0,0.60), 0 1px 0 rgba(255,255,255,0.40), inset 0 0 20px rgba(255,255,255,0.20);
 }
+.panel > header button.right {
+  left: auto;
+  right: 0;
+}
+.list .item {
+  padding: 0 15px;
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 1px solid rgba(0,0,0,0.10);
+  color: #292d39;
+  text-shadow: 0 1px 0 #fff;
+  background: #f6f6f7;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), color-stop(0.5, rgba(255,255,255,0.40)), color-stop(0.5, rgba(255,255,255,0.00))), #f6f6f7;
+}
+.list .item img {
+  float: right;
+  max-width: 30px;
+  max-height: 30px;
+  display: inline-block;
+  margin: 10px 0;
+}
+.list .item:active {
+  background: #f6f6f7;
+  -moz-box-shadow: inset 0 1px 3px rgba(0,0,0,0.10);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.10);
+  -moz-box-shadow: inset 0 1px 3px rgba(0,0,0,0.10);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.10);
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.10);
+}
+form {
+  margin: 10px;
+  background: #fff;
+  border: 1px solid #aeaeae;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.10);
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.10);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.10);
+}
+label {
+  display: block;
+  border-bottom: 1px solid #aeaeae;
+  font-size: 13px;
+  padding: 15px;
+}
+label:last-child {
+  border-bottom: none;
+}
+label span::after {
+  content: ':';
+}
+select,
+input {
+  display: block;
+  width: 100%;
+  font-size: 15px;
+  margin: 5px 0 0 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
