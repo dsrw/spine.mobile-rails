@@ -1,0 +1,31 @@
+#= require json2                    
+#= require gfx
+#= require spine
+#= require spine/manager
+#= require spine/ajax
+#= require spine/local
+#= require spine/route
+#= require spine/relation
+#= require spine/tmpl
+#= require spine/stage
+#= require spine/panel
+#= require spine/touch
+#= require_tree ./lib
+#= require_self
+#= require_tree ./models
+#= require_tree ./controllers
+#= require_tree ./views
+
+class <%= app_class %> extends Stage.Global
+  constructor: -> 
+    super
+
+    # Controllers...
+    # @home = new Home
+
+    Spine.Route.setup()
+
+    # Root route.              
+    # @navigate '/home'
+
+window.<%= app_class %> = <%= app_class %>
